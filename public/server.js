@@ -35,8 +35,8 @@ function removeUser(user) {
 class Game {
 
 	/**
-	 * @param {User} user1 
-	 * @param {User} user2 
+	 * @param {User} user1
+	 * @param {User} user2
 	 */
 	constructor(user1, user2) {
 		this.user1 = user1;
@@ -66,14 +66,16 @@ class Game {
 		if (
 			this.user1.guess === GUESS_ROCK && this.user2.guess === GUESS_SCISSORS ||
 			this.user1.guess === GUESS_PAPER && this.user2.guess === GUESS_ROCK ||
-			this.user1.guess === GUESS_SCISSORS && this.user2.guess === GUESS_PAPER
+			this.user1.guess === GUESS_SCISSORS && this.user2.guess === GUESS_PAPER ||
+			this.user1.guess === GUESS_WATER && this.user2.guess === GUESS_PAPER
 		) {
 			this.user1.win();
 			this.user2.lose();
 		} else if (
 			this.user2.guess === GUESS_ROCK && this.user1.guess === GUESS_SCISSORS ||
 			this.user2.guess === GUESS_PAPER && this.user1.guess === GUESS_ROCK ||
-			this.user2.guess === GUESS_SCISSORS && this.user1.guess === GUESS_PAPER
+			this.user2.guess === GUESS_SCISSORS && this.user1.guess === GUESS_PAPER||
+			this.user2.guess === GUESS_WATER && this.user1.guess === GUESS_PAPER
 		) {
 			this.user2.win();
 			this.user1.lose();
